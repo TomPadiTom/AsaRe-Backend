@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    # El puerto de la DB varia de manera LOCAL para Win o Mac, probar el correspondiente:
+    # MAC: 8889 || WIN: 3306
+    url: jdbc:mysql://${DB_URL:localhost}:${DB_PORT:8889}/${DB_NAME:asadoremoto_db}
+
+    # Por defecto usuario y pass: root
+    username: ${DB_USER:root}
+    password: ${DB_PASS:root}
+
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  web:
+    locale: es
+
+server:
+  # Por defecto: 8080
+  port: ${PORT:8080}
+
+# Otras configuraciones:
